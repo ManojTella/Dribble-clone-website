@@ -1,6 +1,7 @@
 # Create-a-simplified-clone-of-Dribbble-landing-page
-## AIM:To create a simplified clone of Dribble Landing Page
-### program:
+## AIM:
+To create a simplified clone of Dribble Landing Page
+## Program:
 ### index.html
 ```
 <!DOCTYPE html>
