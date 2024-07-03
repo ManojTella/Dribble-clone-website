@@ -1,10 +1,8 @@
-# Dribble-clone-website
 # Create-a-simplified-clone-of-Dribbble-landing-page
-## AIM: 
-To create a simplified clone of Dribble Landing Page.
+## AIM:To create a simplified clone of Dribble Landing Page
 ### program:
-### Index.html
-```
+### index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,13 +34,15 @@ To create a simplified clone of Dribble Landing Page.
             <p>Dribbble is the leading destination to find & showcase creative work and home to the world's best design professionals.</p>
             <button class="cta-button">Explore Now</button>
         </section>
-        <section class="gallery">
-            <div class="gallery-item"><img src="img1.png" alt="Image 1"></div>
-            <div class="gallery-item"><img src="img2.png" alt="Image 2"></div>
-            <div class="gallery-item"><img src="img3.png" alt="Image 3"></div>
-            <div class="gallery-item"><img src="img4.png" alt="Image 4"></div>
-            <div class="gallery-item"><img src="img5.png" alt="Image 5"></div>
-            <div class="gallery-item"><img src="img6.png" alt="Image 6"></div>
+        <section class="gallery-container">
+            <div class="gallery">
+                <div class="gallery-item"><img src="img1.png" alt="Image 1"></div>
+                <div class="gallery-item"><img src="img2.png" alt="Image 2"></div>
+                <div class="gallery-item"><img src="img3.png" alt="Image 3"></div>
+                <div class="gallery-item"><img src="img4.png" alt="Image 4"></div>
+                <div class="gallery-item"><img src="img5.png" alt="Image 5"></div>
+                <div class="gallery-item"><img src="img6.png" alt="Image 6"></div>
+            </div>
         </section>
     </main>
     <footer>
@@ -52,9 +52,9 @@ To create a simplified clone of Dribble Landing Page.
 </body>
 </html>
 
-```
-### Styles.css
-```
+
+## Styles.css
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -170,38 +170,29 @@ nav {
     transform: scale(1.05);
 }
 
+.gallery-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-    background-color: #fff;
-    transition: background-color 0.5s;
+    display: flex;
+    animation: scroll 20s linear infinite;
 }
 
 .gallery-item {
-    background-color: #ddd;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slideIn 1s forwards;
-    overflow: hidden;
+    display: inline-block;
+    padding: 0 1
+    
+    
+    0px;
 }
 
 .gallery-item img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-}
-
-.gallery-item:nth-child(odd) {
-    animation-delay: 0.5s;
-}
-
-.gallery-item:nth-child(even) {
-    animation-delay: 1s;
+    display: block;
+    border-radius: 10px;
 }
 
 footer {
@@ -226,24 +217,21 @@ footer p {
     }
 }
 
-@keyframes slideIn {
+@keyframes scroll {
     from {
-        transform: translateY(50px);
-        opacity: 0;
+        transform: translateX(0);
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateX(-50%);
     }
 }
 
-```
-### Script.js
-```
+
+## Script.js
+
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
     const hero = document.querySelector('.hero');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
     // Change header background on scroll
     window.addEventListener('scroll', function () {
@@ -254,29 +242,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Change hero and gallery background color periodically
+    // Change hero and footer background color periodically
     setInterval(() => {
         hero.style.backgroundColor = hero.style.backgroundColor === 'rgb(245, 245, 245)' ? '#e5e5e5' : '#f5f5f5';
-        document.querySelector('.gallery').style.backgroundColor = document.querySelector('.gallery').style.backgroundColor === 'rgb(255, 255, 255)' ? '#f9f9f9' : '#fff';
         document.querySelector('footer').style.backgroundColor = document.querySelector('footer').style.backgroundColor === 'rgb(255, 255, 255)' ? '#f9f9f9' : '#fff';
     }, 3000);
-
-    // Animate gallery items on scroll
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    });
-
-    galleryItems.forEach(item => {
-        observer.observe(item);
-    });
 });
 
-```
+
 ## Output:
 ![image](https://github.com/21003698/Create-a-simplified-clone-of-Dribbble-landing-page./assets/93427522/c3e4975a-7511-4dd1-9b15-827c6794cc2c)
 
