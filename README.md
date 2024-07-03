@@ -1,8 +1,9 @@
 # Dribble-clone-website
 # Create-a-simplified-clone-of-Dribbble-landing-page
-## AIM:TO create a simplified clone of Dribble Landing Page
+## AIM: 
+TO create a simplified clone of Dribble Landing Page.
 ### program:
-### index.html
+### Index.html
 ```
 <!DOCTYPE html>
 <html lang="en">
