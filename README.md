@@ -2,7 +2,7 @@
 ## AIM:To create a simplified clone of Dribble Landing Page
 ### program:
 ### index.html
-
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,9 +52,9 @@
 </body>
 </html>
 
-
+```
 ## Styles.css
-
+```
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -226,9 +226,9 @@ footer p {
     }
 }
 
-
+```
 ## Script.js
-
+```
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
     const hero = document.querySelector('.hero');
@@ -248,10 +248,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('footer').style.backgroundColor = document.querySelector('footer').style.backgroundColor === 'rgb(255, 255, 255)' ? '#f9f9f9' : '#fff';
     }, 3000);
 });
-
+```
 
 ## Output:
 ![image](https://github.com/21003698/Create-a-simplified-clone-of-Dribbble-landing-page./assets/93427522/c3e4975a-7511-4dd1-9b15-827c6794cc2c)
 
 ## Result:
-Thus,Creating a simplified clone of Dribbble landing-page was done successfully
+Thus,Creating a simplified clone of Dribbble landing-page was done successfully.
